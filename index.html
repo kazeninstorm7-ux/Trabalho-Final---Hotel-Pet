@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Pet - Painel do Gerente</title>
+</head>
+<body>
+
+<header>
+    <h1>Hotel Pet - Sistema de Gestão</h1>
+    <p>Área do Gerente</p>
+
+    <!-- Menu principal de navegacao interna -->
+    <nav>
+        <ul>
+            <li><a href="#login">Login / Cadastro</a></li>
+            <li><a href="#reservas">Reservas</a></li>
+            <li><a href="#nova-reserva">Nova Reserva</a></li>
+            <li><a href="#pets">Pets</a></li>
+            <li><a href="#novo-pet">Cadastrar Pet</a></li>
+            <li><a href="#usuarios">Usuários</a></li>
+            <li><a href="#configuracoes">Configurações</a></li>
+            <li><a href="#perfil">Meu Perfil</a></li>
+        </ul>
+    </nav>
+</header>
+
+<hr>
+
+<main>
+
+    <!-- Tela 1: Login e Cadastro -->
+    <section id="login">
+        <h2>Acesso ao Sistema</h2>
+
+        <form action="#reservas" method="post">
+            <fieldset>
+                <legend>Já sou cadastrado</legend>
+
+                <p>
+                    <label for="usr_email">E-mail:</label><br>
+                    <input type="email" id="usr_email" name="email" placeholder="seu@email.com" required>
+                </p>
+                <p>
+                    <label for="usr_senha">Senha:</label><br>
+                    <input type="password" name="senha" id="usr_senha" required>
+                </p>
+
+                <input type="submit" value="Entrar no Painel">
+            </fieldset>
+        </form>
+
+        <br>
+
+        <form action="#reservas" method="post">
+            <fieldset>
+                <legend>Criar conta nova</legend>
+
+                <label for="nome_cad">Nome completo:</label><br>
+                <input type="text" id="nome_cad" name="nome" required><br><br>
+
+                <label for="email_cad">E-mail de contato:</label><br>
+                <input type="email" id="email_cad" name="email_cad" required><br><br>
+
+                <label for="tel_cad">Telefone / Whats:</label><br>
+                <input type="tel" name="telefone" id="tel_cad" placeholder="(77) 99999-9999" required><br><br>
+
+                <label for="pass_cad">Sua senha:</label><br>
+                <input type="password" id="pass_cad" name="senha" required><br><br>
+
+                <button type="submit">Cadastrar e Acessar</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- Tela 2: Listagem de Reservas -->
+    <section id="reservas">
+        <h2>Painel de Reservas</h2>
+
+        <p><a href="#nova-reserva">+ Agendar nova estadia</a></p>
+
+        <form action="#" method="get">
+            <fieldset>
+                <legend>Buscar no sistema</legend>
+
+                <label for="busca_nome">Nome do pet:</label>
+                <input type="text" id="busca_nome" name="pet" placeholder="Ex: Rex">
+
+                &nbsp;&nbsp;
+
+                <label for="filtro_status">Status:</label>
+                <select id="filtro_status" name="status">
+                    <option value="">Todas</option>
+                    <option value="andamento">Em andamento</option>
+                    <option value="finalizada">Finalizada</option>
+                    <option value="cancelada">Cancelada</option>
+                </select>
+
+                <button type="submit">Filtrar</button>
+            </fieldset>
+        </form>
+
+        <br>
+
+        <!-- Tabela principal de reservas -->
+        <table border="1" cellpadding="6" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Cód.</th>
+                    <th>Pet</th>
+                    <th>Tutor</th>
+                    <th>Período</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#101</td>
+                    <td>Thor</td>
+                    <td>Roberto Mendes</td>
+                    <td>10/08/2026 a 15/08/2026</td>
+                    <td>Em andamento</td>
+                    <td><a href="#detalhes-reserva">Ver detalhes</a></td>
+                </tr>
+                <tr>
+                    <td>#100</td>
+                    <td>Mel</td>
+                    <td>Juliana Paes</td>
+                    <td>01/08/2026 a 05/08/2026</td>
+                    <td>Finalizada</td>
+                    <td><a href="#detalhes-reserva">Editar estadia</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr>
+
+    <!-- Tela 3: Cadastro de Reserva -->
+    <section id="nova-reserva">
+        <h2>Cadastrar Nova Reserva</h2>
+
+        <form action="#reservas" method="post">
+            <fieldset>
+                <legend>Dados da Hospedagem</legend>
+
+                <p>
+                    <label for="select_pet">Selecione o Pet:</label><br>
+                    <select id="select_pet" name="pet_id" required>
+                        <option value="">-- Escolha um pet --</option>
+                        <option value="1">Rex (Tutor: Roberto Mendes)</option>
+                        <option value="2">Mel (Tutora: Juliana Paes)</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="dt_entrada">Data de Entrada:</label><br>
+                    <input type="date" id="dt_entrada" name="dt_entrada" required>
+                </p>
+
+                <p>
+                    <label for="dt_saida">Data de Saída:</label><br>
+                    <input type="date" id="dt_saida" name="dt_saida" required>
+                </p>
+
+                <p>
+                    <label for="obs_pet">Instruções de Cuidados / Ração:</label><br>
+                    <textarea id="obs_pet" name="observacao" rows="3" cols="45" placeholder="Anotações sobre remédios ou alimentação..."></textarea>
+                </p>
+
+                <p>
+                    <label for="val_estimado">Valor Total Estimado (R$):</label><br>
+                    <input type="text" id="val_estimado" name="valor" value=" " readonly>
+                </p>
+
+                <button type="submit">Confirmar e Salvar Reserva</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- Tela 3.1: Detalhes da Reserva -->
+    <section id="detalhes-reserva">
+        <h2>Acompanhamento da Reserva (#100)</h2>
+
+        <form action="#reservas" method="post">
+            <fieldset>
+                <legend>Reserva 100 - Mel</legend>
+
+                <p><em>Edição liberada para o perfil de Gerente.</em></p>
+
+                <label for="st_reserva">Alterar Status:</label><br>
+                <select id="st_reserva" name="status">
+                    <option value="andamento">Em andamento</option>
+                    <option value="finalizada" selected>Finalizada</option>
+                    <option value="cancelada">Cancelada</option>
+                </select>
+
+                <br><br>
+
+                <label for="anotacoes_diarias">Diário de Bordo / Anotações:</label><br>
+                <textarea id="anotacoes_diarias" name="anotacoes" rows="4" cols="50">Pet alimentou-se bem e brincou no jardim no período da tarde.</textarea>
+
+                <br><br>
+
+                <label for="anexo_fotos">Anexar Fotos da Estadia:</label><br>
+                <input type="file" id="anexo_fotos" name="fotos" multiple accept="image/*">
+
+                <br><br>
+
+                <label for="anexo_recibo">Comprovante / Recibo:</label><br>
+                <input type="file" id="anexo_recibo" name="recibo" accept=".pdf,image/*">
+
+                <br><br>
+
+                <button type="submit">Salvar Atualizações</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- Tela 4: Gestao de Pets -->
+    <section id="pets">
+        <h2>Gestão de Pets</h2>
+
+        <p><a href="#novo-pet">+ Cadastrar novo animal</a></p>
+
+        <form action="#" method="get">
+            <fieldset>
+                <legend>Filtros de busca</legend>
+
+                <label for="f_tipo">Tipo:</label>
+                <input type="text" id="f_tipo" name="tipo" placeholder="Cão, Gato...">
+
+                <label for="f_raca">Raça:</label>
+                <input type="text" id="f_raca" name="raca">
+
+                <label for="f_porte">Porte:</label>
+                <select id="f_porte" name="porte">
+                    <option value="">Todos</option>
+                    <option value="pequeno">Pequeno</option>
+                    <option value="medio">Médio</option>
+                    <option value="grande">Grande</option>
+                </select>
+
+                <input type="submit" value="Filtrar">
+            </fieldset>
+        </form>
+
+        <br>
+
+        <table border="1" cellpadding="6">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Nome</th>
+                    <th>Espécie</th>
+                    <th>Raça</th>
+                    <th>Porte</th>
+                    <th>Tutor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="https://via.placeholder.com/40" alt="Foto de Rex" width="40" height="40">
+                    </td>
+                    <td>Rex</td>
+                    <td>Cão</td>
+                    <td>Pastor Alemão</td>
+                    <td>Grande</td>
+                    <td>Roberto Mendes</td>
+                    <td>
+                        <a href="#novo-pet">Editar</a> |
+                        <a href="#" onclick="alert('Pet excluído com sucesso!');">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr>
+
+    <!-- Tela 5: Cadastro/Edição de Pet -->
+    <section id="novo-pet">
+        <h2>Cadastrar / Editar Pet</h2>
+
+        <form action="#pets" method="post">
+            <fieldset>
+                <legend>Ficha do Animal</legend>
+
+                <label for="select_tutor">Tutor responsável:</label><br>
+                <select id="select_tutor" name="proprietario" required>
+                    <option value="">Selecione o cliente</option>
+                    <option value="1">Roberto Mendes</option>
+                    <option value="2">Juliana Paes</option>
+                </select><br><br>
+
+                <label for="pet_nome">Nome do Pet:</label><br>
+                <input type="text" id="pet_nome" name="nome_pet" required><br><br>
+
+                <label for="pet_especie">Espécie / Tipo:</label><br>
+                <input type="text" id="pet_especie" name="tipo_pet" placeholder="Ex: Cão, Gato" required><br><br>
+
+                <label for="pet_raca">Raça:</label><br>
+                <input type="text" id="pet_raca" name="raca_pet" required><br><br>
+
+                <label for="pet_porte">Porte:</label><br>
+                <select id="pet_porte" name="porte" required>
+                    <option value="pequeno">Pequeno</option>
+                    <option value="medio">Médio</option>
+                    <option value="grande">Grande</option>
+                </select><br><br>
+
+                <label for="pet_foto">Foto do Animal:</label><br>
+                <input type="file" id="pet_foto" name="foto_pet" accept="image/*"><br><br>
+
+                <button type="submit">Salvar Ficha do Pet</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- Tela 6: Gerenciamento de Usuarios -->
+    <section id="usuarios">
+        <h2>Gestão de Usuários</h2>
+
+        <table border="1" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Cargo Atual</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Roberto Mendes</td>
+                    <td>seu@email.com</td>
+                    <td>Cliente</td>
+                    <td><a href="#editar-usuario">Alterar Cargo</a></td>
+                </tr>
+                <tr>
+                    <td>Mariana Ramos</td>
+                    <td>seu@email.com</td>
+                    <td>Funcionário</td>
+                    <td><a href="#editar-usuario">Alterar Cargo</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <article id="editar-usuario">
+            <h3>Alterar Permissão de Acesso</h3>
+
+            <form action="#usuarios" method="post">
+                <fieldset>
+                    <legend>Editar Nível</legend>
+
+                    <p>Usuário selecionado: <strong>Roberto Mendes</strong></p>
+
+                    <label for="novo_cargo">Nova função no sistema:</label><br>
+                    <select id="novo_cargo" name="funcao">
+                        <option value="cliente" selected>Cliente</option>
+                        <option value="funcionario">Funcionário</option>
+                        <option value="gerente">Gerente</option>
+                    </select><br><br>
+
+                    <button type="submit">Atualizar Permissão</button>
+                </fieldset>
+            </form>
+        </article>
+    </section>
+
+    <hr>
+
+    <!-- Tela 7: Configurações do Gerente -->
+    <section id="configuracoes">
+        <h2>Configurações do Hotel</h2>
+
+        <form action="#configuracoes" method="post">
+            <fieldset>
+                <legend>Parâmetros Globais (Visão Gerente)</legend>
+
+                <p>
+                    <label for="val_diaria">Valor Padrão da Diária (R$):</label><br>
+                    <input type="number" id="val_diaria" name="diaria" value=" " step="0.01" required>
+                </p>
+
+                <p>
+                    <label for="qtd_vagas">Capacidade Máxima de Vagas:</label><br>
+                    <input type="number" id="qtd_vagas" name="vagas" value=" " required>
+                </p>
+
+                <button type="submit">Salvar Configurações</button>
+            </fieldset>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- Tela 8: Perfil -->
+    <section id="perfil">
+        <h2>Meu Perfil</h2>
+
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Dados da Conta</legend>
+
+                <label for="p_nome">Nome do Usuário:</label><br>
+                <input type="text" id="p_nome" name="nome" value="Gerente" required><br><br>
+
+                <label for="p_email">E-mail Corporativo:</label><br>
+                <input type="email" id="p_email" name="email" value=" " required><br><br>
+
+                <label for="p_foto">Foto de Perfil:</label><br>
+                <input type="file" id="p_foto" name="foto" accept="image/*"><br><br>
+
+                <button type="submit">Atualizar Perfil</button>
+            </fieldset>
+        </form>
+    </section>
+
+</main>
+
+<hr>
+
+<footer>
+    <p><small>&copy; 2026 Trabalho Final - Hotel Pet - Entrega da Semana 1</small></p>
+</footer>
+
+</body>
+</html>
