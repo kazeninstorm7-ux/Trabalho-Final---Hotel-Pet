@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Hotel Pet - Painel do Gerente</title>
 </head>
 <body>
 
 <header>
-    <h1>Hotel Pet - Sistema de Gestão</h1>
+    <h1>SISTEMA ESPECIAL DE GESTÃO HOTEL PET</h1>
     <p>Área do Gerente</p>
 
     <!-- Menu principal de navegacao interna -->
@@ -42,6 +43,7 @@
                     <label for="usr_email">E-mail:</label><br>
                     <input type="email" id="usr_email" name="email" placeholder="seu@email.com" required>
                 </p>
+
                 <p>
                     <label for="usr_senha">Senha:</label><br>
                     <input type="password" name="senha" id="usr_senha" required>
@@ -117,6 +119,7 @@
                     <th>Ações</th>
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
                     <td>#101</td>
@@ -126,6 +129,7 @@
                     <td>Em andamento</td>
                     <td><a href="#detalhes-reserva">Ver detalhes</a></td>
                 </tr>
+
                 <tr>
                     <td>#100</td>
                     <td>Mel</td>
@@ -267,10 +271,11 @@
                     <th>Ações</th>
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
                     <td>
-                        <img src="https://via.placeholder.com/40" alt="Foto de Rex" width="40" height="40">
+                        <img src="imagens/rex.jpg" alt="Foto de Rex" width="40" height="40">
                     </td>
                     <td>Rex</td>
                     <td>Cão</td>
@@ -278,12 +283,72 @@
                     <td>Grande</td>
                     <td>Roberto Mendes</td>
                     <td>
+                        <a href="#visualizar-pet">Visualizar</a> |
                         <a href="#novo-pet">Editar</a> |
-                        <a href="#" onclick="alert('Pet excluído com sucesso!');">Excluir</a>
+                        <a href="#pets">Excluir</a>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </section>
+
+    <hr>
+
+    <!-- Tela 4.1: Visualização do Pet -->
+    <section id="visualizar-pet">
+        <h2>Visualizar Pet</h2>
+
+        <fieldset>
+            <legend>Dados do Animal</legend>
+
+            <p>
+                <strong>Foto:</strong><br>
+                <img src="imagens/rex.jpg" alt="Foto de Rex" width="120" height="120">
+            </p>
+
+            <p><strong>Nome:</strong> Rex</p>
+            <p><strong>Espécie / Tipo:</strong> Cão</p>
+            <p><strong>Raça:</strong> Pastor Alemão</p>
+            <p><strong>Porte:</strong> Grande</p>
+            <p><strong>Tutor responsável:</strong> Roberto Mendes</p>
+        </fieldset>
+
+        <br>
+
+        <h3>Histórico de Reservas</h3>
+
+        <table border="1" cellpadding="6">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Período</th>
+                    <th>Status</th>
+                    <th>Observação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>#098</td>
+                    <td>20/07/2026 a 23/07/2026</td>
+                    <td>Finalizada</td>
+                    <td>Estadia concluída normalmente.</td>
+                </tr>
+
+                <tr>
+                    <td>#101</td>
+                    <td>10/08/2026 a 15/08/2026</td>
+                    <td>Em andamento</td>
+                    <td>Pet em hospedagem.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <a href="#novo-pet">Editar informações do animal</a>
+        &nbsp;|&nbsp;
+        <a href="#pets">Excluir animal</a>
     </section>
 
     <hr>
@@ -333,41 +398,155 @@
     <section id="usuarios">
         <h2>Gestão de Usuários</h2>
 
+        <!-- Pesquisa de usuários -->
+        <form action="#usuarios" method="get">
+            <fieldset>
+                <legend>Pesquisar Usuário</legend>
+
+                <label for="busca_usuario">Nome ou e-mail:</label><br>
+                <input type="text" id="busca_usuario" name="usuario" placeholder="Digite o nome ou e-mail">
+
+                <br><br>
+
+                <label for="filtro_funcao">Função:</label><br>
+                <select id="filtro_funcao" name="funcao">
+                    <option value="">Todas</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="funcionario">Funcionário</option>
+                    <option value="gerente">Gerente</option>
+                </select>
+
+                <br><br>
+
+                <label for="filtro_usuario_status">Status:</label><br>
+                <select id="filtro_usuario_status" name="status">
+                    <option value="">Todos</option>
+                    <option value="ativo">Ativo</option>
+                    <option value="inativo">Inativo</option>
+                </select>
+
+                <br><br>
+
+                <button type="submit">Pesquisar</button>
+            </fieldset>
+        </form>
+
+        <br>
+
+        <p><a href="#novo-usuario">+ Cadastrar novo usuário</a></p>
+
         <table border="1" cellpadding="8">
             <thead>
                 <tr>
                     <th>Nome</th>
                     <th>E-mail</th>
                     <th>Cargo Atual</th>
+                    <th>Status</th>
                     <th>Ação</th>
                 </tr>
             </thead>
+
             <tbody>
                 <tr>
                     <td>Roberto Mendes</td>
                     <td>seu@email.com</td>
                     <td>Cliente</td>
-                    <td><a href="#editar-usuario">Alterar Cargo</a></td>
+                    <td>Ativo</td>
+                    <td>
+                        <a href="#visualizar-usuario">Visualizar</a> |
+                        <a href="#editar-usuario">Editar</a> |
+                        <a href="#usuarios">Remover</a>
+                    </td>
                 </tr>
+
                 <tr>
                     <td>Mariana Ramos</td>
                     <td>seu@email.com</td>
                     <td>Funcionário</td>
-                    <td><a href="#editar-usuario">Alterar Cargo</a></td>
+                    <td>Ativo</td>
+                    <td>
+                        <a href="#visualizar-usuario">Visualizar</a> |
+                        <a href="#editar-usuario">Editar</a> |
+                        <a href="#usuarios">Remover</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
 
         <br>
 
-        <article id="editar-usuario">
-            <h3>Alterar Permissão de Acesso</h3>
+        <!-- Cadastro de novo usuário -->
+        <article id="novo-usuario">
+            <h3>Cadastrar Novo Usuário</h3>
 
             <form action="#usuarios" method="post">
                 <fieldset>
-                    <legend>Editar Nível</legend>
+                    <legend>Dados do Usuário</legend>
+
+                    <label for="novo_usuario_nome">Nome completo:</label><br>
+                    <input type="text" id="novo_usuario_nome" name="nome_usuario" required><br><br>
+
+                    <label for="novo_usuario_email">E-mail:</label><br>
+                    <input type="email" id="novo_usuario_email" name="email_usuario" required><br><br>
+
+                    <label for="novo_usuario_telefone">Telefone:</label><br>
+                    <input type="tel" id="novo_usuario_telefone" name="telefone_usuario"><br><br>
+
+                    <label for="novo_usuario_funcao">Função:</label><br>
+                    <select id="novo_usuario_funcao" name="funcao_usuario" required>
+                        <option value="cliente">Cliente</option>
+                        <option value="funcionario">Funcionário</option>
+                        <option value="gerente">Gerente</option>
+                    </select><br><br>
+
+                    <label for="novo_usuario_status">Status:</label><br>
+                    <select id="novo_usuario_status" name="status_usuario" required>
+                        <option value="ativo">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                    </select><br><br>
+
+                    <button type="submit">Cadastrar Usuário</button>
+                </fieldset>
+            </form>
+        </article>
+
+        <br>
+
+        <!-- Visualização de usuário -->
+        <article id="visualizar-usuario">
+            <h3>Visualizar Usuário</h3>
+
+            <fieldset>
+                <legend>Dados da Conta</legend>
+
+                <p><strong>Nome:</strong> Roberto Mendes</p>
+                <p><strong>E-mail:</strong> seu@email.com</p>
+                <p><strong>Telefone:</strong> (77) 99999-9999</p>
+                <p><strong>Função:</strong> Cliente</p>
+                <p><strong>Status:</strong> Ativo</p>
+            </fieldset>
+        </article>
+
+        <br>
+
+        <!-- Edição de usuário -->
+        <article id="editar-usuario">
+            <h3>Editar Usuário</h3>
+
+            <form action="#usuarios" method="post">
+                <fieldset>
+                    <legend>Alterar Dados do Usuário</legend>
 
                     <p>Usuário selecionado: <strong>Roberto Mendes</strong></p>
+
+                    <label for="editar_nome_usuario">Nome:</label><br>
+                    <input type="text" id="editar_nome_usuario" name="nome_editar" value="Roberto Mendes" required><br><br>
+
+                    <label for="editar_email_usuario">E-mail:</label><br>
+                    <input type="email" id="editar_email_usuario" name="email_editar" value="seu@email.com" required><br><br>
+
+                    <label for="editar_telefone_usuario">Telefone:</label><br>
+                    <input type="tel" id="editar_telefone_usuario" name="telefone_editar" value="(77) 99999-9999"><br><br>
 
                     <label for="novo_cargo">Nova função no sistema:</label><br>
                     <select id="novo_cargo" name="funcao">
@@ -376,7 +555,13 @@
                         <option value="gerente">Gerente</option>
                     </select><br><br>
 
-                    <button type="submit">Atualizar Permissão</button>
+                    <label for="editar_status_usuario">Status do usuário:</label><br>
+                    <select id="editar_status_usuario" name="status_editar">
+                        <option value="ativo" selected>Ativo</option>
+                        <option value="inativo">Inativo</option>
+                    </select><br><br>
+
+                    <button type="submit">Atualizar Usuário</button>
                 </fieldset>
             </form>
         </article>
@@ -436,7 +621,9 @@
 <hr>
 
 <footer>
-    <p><small>&copy; 2026 Trabalho Final - Hotel Pet - Entrega da Semana 1</small></p>
+    <p><small>&copy; 2026 Trabalho Final - Hotel Pet - Entrega da Semana 1 e 2</small></p>
+    <p><small>Programação Web I - Professor: Lucas Santos de Oliveira</small></p>
+    <p><small>Aluno: Edinei Pinho</small></p>
 </footer>
 
 </body>

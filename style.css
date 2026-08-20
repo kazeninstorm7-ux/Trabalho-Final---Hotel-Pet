@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f5f4;
+    color: #333;
+    background-image: url("fundo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #174a5b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin: 0 0 5px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #286b7a;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px #ccc;
+}
+
+h2 {
+    color: #174a5b;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: #174a5b;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+button,
+input[type="submit"] {
+    background-color: #28758a;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #174a5b;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background-color: #174a5b;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+#pets img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+article {
+    background-color: #f5f8f7;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 4px solid #28758a;
+}
+
+footer {
+    background-color: #174a5b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    button,
+    input[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* Visualização do Pet */
+#visualizar-pet img {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Histórico de reservas */
+#visualizar-pet table {
+    margin-top: 10px;
+}
+
+/* Área de usuários */
+#usuarios article {
+    margin-top: 25px;
+}
+
+#usuarios h3 {
+    color: #174a5b;
+}
+
+/* Formulários de pesquisa */
+#usuarios fieldset {
+    background-color: #fafafa;
+}

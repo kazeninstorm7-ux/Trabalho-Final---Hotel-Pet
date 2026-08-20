@@ -26,8 +26,9 @@ A versão desenvolvida corresponde à **visão do Gerente**, que possui as funci
 ## Tecnologias utilizadas
 
 - HTML5
+- CSS3
 
-> Nesta primeira etapa, o foco do projeto é a estrutura HTML. A estilização com CSS será desenvolvida na etapa seguinte.
+> Nesta etapa do projeto, foram desenvolvidas a estrutura das páginas em HTML5 e a estilização da interface utilizando CSS3.
 
 ## Observações
 
