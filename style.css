@@ -35,14 +35,19 @@ nav ul {
 }
 
 nav a {
+    display: inline-block;
     color: white;
     text-decoration: none;
     padding: 8px 12px;
     border-radius: 5px;
+    transition: background-color 0.2s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus,
+nav a.ativo {
     background-color: #286b7a;
+    outline-offset: 3px;
 }
 
 main {
@@ -57,6 +62,19 @@ section {
     margin-bottom: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 6px #ccc;
+}
+
+/* A navegação mostra somente a tela selecionada. */
+section.tela-oculta {
+    display: none;
+}
+
+.mensagem-navegacao {
+    background: #e7f2f4;
+    border-left: 4px solid #28758a;
+    border-radius: 5px;
+    padding: 12px 16px;
+    margin: 0 0 20px;
 }
 
 h2 {
@@ -85,6 +103,10 @@ textarea {
     margin-top: 5px;
     border: 1px solid #bbb;
     border-radius: 5px;
+}
+
+input[type="file"] {
+    padding: 7px;
 }
 
 button,
@@ -146,26 +168,8 @@ footer {
     margin-top: 40px;
 }
 
-@media (max-width: 700px) {
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    section {
-        padding: 15px;
-    }
-
-    table {
-        display: block;
-        overflow-x: auto;
-    }
-
-    button,
-    input[type="submit"] {
-        width: 100%;
-    }
+footer p {
+    margin: 6px 0;
 }
 
 /* Visualização do Pet */
@@ -191,4 +195,30 @@ footer {
 /* Formulários de pesquisa */
 #usuarios fieldset {
     background-color: #fafafa;
+}
+
+@media (max-width: 700px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    button,
+    input[type="submit"] {
+        width: 100%;
+    }
 }
