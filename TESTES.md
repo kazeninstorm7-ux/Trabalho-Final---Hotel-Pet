@@ -1,23 +1,30 @@
 # Testes - Hotel Pet
 
-## Semana 1 - Navegação
+## Semana 3 - Edição das Tabelas
 
 ### Objetivo
 
-Verificar o funcionamento da navegação entre as telas do sistema Hotel Pet, utilizando JavaScript.
+Verificar o funcionamento das operações de cadastro, visualização, edição e exclusão de registros nas tabelas do sistema Hotel Pet, utilizando JavaScript.
 
 ### Testes
 
-- [x] Verificar se a página inicial é exibida corretamente.
-- [x] Verificar se os botões de navegação funcionam.
-- [x] Verificar se é possível navegar entre as telas do sistema.
-- [x] Verificar se as telas são exibidas corretamente durante a navegação.
-- [ ] Verificar se não ocorrem erros no console do navegador durante a navegação.
+- [x] Verificar se é possível cadastrar uma nova reserva.
+- [x] Verificar se é possível alterar o status de uma reserva.
+- [x] Verificar se é possível cadastrar um novo pet.
+- [x] Verificar se é possível visualizar os dados de um pet.
+- [x] Verificar se é possível editar os dados de um pet.
+- [x] Verificar se é possível excluir um pet.
+- [x] Verificar se é possível cadastrar um novo usuário.
+- [x] Verificar se é possível visualizar os dados de um usuário.
+- [x] Verificar se é possível editar os dados de um usuário.
+- [x] Verificar se é possível excluir um usuário.
+- [x] Verificar se as tabelas são atualizadas após as alterações.
+- [x] Verificar se não ocorrem erros no console do navegador durante os testes.
 
 ### Resultado dos testes
 
-Os testes funcionais foram realizados no navegador para verificar o funcionamento da navegação entre as telas do sistema.
+Os testes funcionais serão realizados no navegador para verificar o funcionamento das operações de cadastro, visualização, edição e exclusão de registros nas tabelas do sistema.
 
 ### Observações
 
-Esta etapa contempla a navegação entre as telas do sistema. As funcionalidades de busca e edição das tabelas serão desenvolvidas nas próximas etapas da atividade.
+Esta etapa contempla a edição e manipulação das tabelas do sistema utilizando JavaScript. Os dados são manipulados diretamente na página, sem utilização de banco de dados ou backend.
