@@ -1,12 +1,18 @@
-Hotel Pet - Programacao Web II
-Semana 2: Buscas
+# Hotel Pet - Programação Web II
 
-Arquivos:
-- index.html: estrutura do projeto baseada na Semana 1.
-- style.css: estilos originais preservados.
-- script.js: navegacao da Semana 1 e filtros da Semana 2.
+## Semana 3: Tabelas
 
-As buscas filtram as tabelas estaticas de reservas, pets e usuarios.
-Como o projeto nao tem backend, os dados nao sao salvos em banco de dados.
+### Arquivos
+- `index.html`: estrutura do projeto baseada na Semana 1.
+- `style.css`: estilos originais do primeiro projeto preservados, conforme as etapas das Semanas 1 e 2.
+- `script.js`: navegação da Semana 1, filtros da Semana 2 e funcionalidades de edição das tabelas da Semana 3.
 
-O HTML referencia os arquivos fundo.jpg e imagens/rex.jpg.
+### Funcionalidades
+As buscas filtram as tabelas estáticas de reservas, pets e usuários.
+
+Na Semana 3, foram implementadas funcionalidades para editar os dados apresentados nas tabelas.
+
+Como o projeto não possui backend, os dados são utilizados de forma estática e não são salvos em banco de dados.
+
+### Imagens
+O HTML referencia os arquivos `fundo.jpg` e `imagens/rex.jpg`. Ambos devem permanecer nas respectivas pastas locais do projeto para que sejam exibidos corretamente.
